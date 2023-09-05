@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skeppy-web-app 
+  labels:
+    app: skeppy
+spec:
+  selector:
+    matchLabels:
+        app: skeppy
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: skeppy
+    spec:
+      containers:
+        - name: skeppy
+          image: 298050056371.dkr.ecr.ap-south-1.amazonaws.com/skeppy:latest
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          imagePullPolicy: Always
