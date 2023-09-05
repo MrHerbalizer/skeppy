@@ -38,7 +38,7 @@ pipeline {
             steps {
 		 sh 'curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.27.4/2023-08-16/bin/linux/amd64/kubectl'
 		 sh 'chmod u+x ./kubectl'
-                 sh '/home/ubuntu/bin/kubectl apply -f deployment.yml'
+                 sh 'kubectl apply -f deployment.yml'
             }
         }
     }
