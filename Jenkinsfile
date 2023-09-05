@@ -24,7 +24,7 @@ pipeline {
                  echo 'Empty'
             }
         }
-        stage('Deploy') {
+        stage('Push') {
             steps {
                 script{
                         docker.withRegistry('https://298050056371.dkr.ecr.ap-south-1.amazonaws.com/skeppy', 'ecr:ap-south-1:aws-credential') {
