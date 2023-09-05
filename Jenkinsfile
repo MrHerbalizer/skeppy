@@ -36,6 +36,7 @@ pipeline {
         }
 	stage('Deploy'){
             steps {
+		 sh 'chmod +x -R /home/ubuntu/bin/kubectl'
                  sh '/home/ubuntu/bin/kubectl apply -f deployment.yml'
             }
         }
